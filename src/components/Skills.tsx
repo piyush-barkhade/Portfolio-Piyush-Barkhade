@@ -1,8 +1,7 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Code, Database, Globe, Tools, Award, TrendingUp } from 'lucide-react';
+import { Code, Database, Globe, Wrench, Award, TrendingUp } from 'lucide-react';
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -50,7 +49,7 @@ const Skills = () => {
     },
     {
       title: 'Tools & Technologies',
-      icon: Tools,
+      icon: Wrench,
       skills: [
         { name: 'Git & GitHub', level: 90, description: 'Version Control' },
         { name: 'VS Code', level: 95, description: 'Primary IDE' },
