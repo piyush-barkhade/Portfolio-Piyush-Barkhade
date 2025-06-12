@@ -195,7 +195,7 @@ const Skills = () => {
                 <div className="space-y-3">
                   <div className="flex items-start gap-3 p-3 glass rounded-lg hover:bg-white/10 transition-colors">
                     <span className="text-neon-purple mt-1">🏆</span>
-                    <span className="text-muted-foreground">Tech Rookies 2025 Winner</span>
+                    <span className="text-muted-foreground">Tech Roadies 2k25 Winner</span>
                   </div>
                   <div className="flex items-start gap-3 p-3 glass rounded-lg hover:bg-white/10 transition-colors">
                     <span className="text-neon-blue mt-1">🎁</span>

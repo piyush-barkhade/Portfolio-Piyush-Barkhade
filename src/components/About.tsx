@@ -19,7 +19,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-32 relative overflow-hidden">
+    <section id="about" className="py-16 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-20 left-10 w-32 h-32 bg-neon-purple/10 rounded-full blur-3xl animate-float"></div>
       <div className="absolute bottom-20 right-10 w-40 h-40 bg-neon-blue/10 rounded-full blur-3xl animate-float" style={{animationDelay: '2s'}}></div>

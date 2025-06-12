@@ -44,7 +44,7 @@ const Hero = () => {
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="animate-fade-in">
           {/* Profile Image with enhanced styling */}
-          <div className="relative inline-block mb-12">
+          <div className="relative inline-block mt-20 mb-12">
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-neon-purple via-neon-blue to-neon-cyan blur-lg opacity-70 animate-pulse-glow"></div>
             <img
               src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face"
@@ -56,8 +56,7 @@ const Hero = () => {
           </div>
           
           <div className="space-y-6 mb-12">
-            <h1 className="text-6xl md:text-8xl font-bold leading-tight">
-              Hi, I'm <span className="text-gradient bg-gradient-to-r from-neon-purple via-neon-blue to-neon-cyan bg-clip-text text-transparent">Piyush</span>
+            <h1 className=" text-4xl md:text-8xl font-bold leading-tight"><span className="text-gradient bg-gradient-to-r from-neon-purple via-neon-blue to-neon-cyan bg-clip-text text-transparent">Piyush Barkhade</span>
             </h1>
             
             <div className="text-2xl md:text-4xl text-muted-foreground min-h-[3rem] flex items-center justify-center">
@@ -111,7 +110,7 @@ const Hero = () => {
           </div>
           
           {/* Enhanced Social Links */}
-          <div className="flex justify-center space-x-8">
+          <div className="flex justify-center space-x-8 mb-12">
             {[
               { icon: Github, href: 'https://github.com', label: 'GitHub', color: 'neon-purple' },
               { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn', color: 'neon-blue' },
@@ -131,14 +130,6 @@ const Hero = () => {
                 </div>
               </a>
             ))}
-          </div>
-        </div>
-        
-        {/* Enhanced scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="flex flex-col items-center space-y-2">
-            <span className="text-sm text-muted-foreground font-mono">Scroll to explore</span>
-            <ArrowDown size={24} className="text-neon-purple animate-pulse" />
           </div>
         </div>
       </div>
