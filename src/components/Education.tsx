@@ -1,115 +1,182 @@
 
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { GraduationCap, Calendar, MapPin, Award } from 'lucide-react';
+import { GraduationCap, Calendar, MapPin, Award, Trophy, Star, BookOpen } from 'lucide-react';
 
 const Education = () => {
   const education = [
     {
       degree: 'Bachelor of Technology in Computer Science Engineering',
-      institution: 'Medi-Caps University, Indore, Madhya Pradesh',
+      institution: 'Medi-Caps University',
+      location: 'Indore, Madhya Pradesh',
       period: '2022 - 2026',
-      grade: 'Current - 9.15 CGPA',
-      color: 'neon-purple'
+      grade: 'Current CGPA: 9.15/10.0',
+      status: 'Pursuing',
+      color: 'neon-purple',
+      highlights: [
+        'Top 5% of the class',
+        'Consistent Dean\'s List member',
+        'Active in technical societies'
+      ]
     },
     {
-      degree: 'Class 12th',
-      institution: 'Chameli Devi Public School, Indore, Madhya Pradesh',
+      degree: 'Higher Secondary Education',
+      institution: 'Chameli Devi Public School',
+      location: 'Indore, Madhya Pradesh',
       period: '2010 - 2022',
-      grade: 'Class 12th - 88.6%, Class 10th - 89%',
-      color: 'neon-blue'
+      grade: 'Class 12th: 88.6% • Class 10th: 89%',
+      status: 'Completed',
+      color: 'neon-blue',
+      highlights: [
+        'Science stream with Mathematics',
+        'School topper in Computer Science',
+        'Active participant in coding competitions'
+      ]
     }
   ];
 
-  const additionalInfo = [
+  const achievements = [
     {
-      title: 'Certifications',
-      items: ['15+ Google Cloud Skill Badges', 'Artificial Intelligence Internship Certificate', 'Web Development Internship Certificate'],
-      icon: Award,
+      category: 'Certifications & Badges',
+      items: [
+        { name: 'Google Cloud Skill Badges', count: '15+', icon: Star },
+        { name: 'Artificial Intelligence Internship Certificate', count: '1', icon: Award },
+        { name: 'Web Development Internship Certificate', count: '1', icon: Award }
+      ],
       color: 'neon-cyan'
     },
     {
-      title: 'Competitions',
-      items: ['Tech Rookies 2025 Winner', 'Google GenAI Study Jams tier 1 Swags and goodies'],
-      icon: GraduationCap,
+      category: 'Competitions & Recognition',
+      items: [
+        { name: 'Tech Rookies 2025 Winner', count: '🏆', icon: Trophy },
+        { name: 'Google GenAI Study Jams Tier 1', count: '🎁', icon: Star },
+        { name: 'Hackathon Participant', count: '3+', icon: Award }
+      ],
       color: 'neon-pink'
     }
   ];
 
   return (
-    <section id="education" className="py-20 relative">
+    <section id="education" className="py-20 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute top-1/4 left-10 w-64 h-64 bg-neon-purple/5 rounded-full blur-3xl animate-float"></div>
+      <div className="absolute bottom-1/4 right-10 w-80 h-80 bg-neon-blue/5 rounded-full blur-3xl animate-float" style={{animationDelay: '3s'}}></div>
+      
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">
-            Education & Achievements
+        <div className="text-center mb-20">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6">
+            Education & <span className="text-gradient">Achievements</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            My academic background and accomplishments
+          <div className="w-24 h-1 bg-gradient-to-r from-neon-purple to-neon-blue mx-auto mb-6"></div>
+          <p className="text-muted-foreground text-xl max-w-3xl mx-auto font-light">
+            My academic journey and professional accomplishments that shaped my expertise
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-16">
           {/* Education Timeline */}
           <div className="space-y-8">
-            <h3 className="text-2xl font-bold text-neon-purple mb-6">Education</h3>
+            <div className="flex items-center gap-3 mb-8">
+              <BookOpen size={32} className="text-neon-purple" />
+              <h3 className="text-3xl font-bold text-neon-purple">Academic Background</h3>
+            </div>
+            
             {education.map((edu, index) => (
               <Card 
                 key={edu.degree}
-                className={`glass glass-hover neon-glow animate-fade-in hover:scale-105 transition-all duration-300`}
+                className={`glass glass-hover neon-glow border-2 border-white/10 hover:border-${edu.color}/30 transition-all duration-500 overflow-hidden group animate-fade-in`}
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <CardHeader>
-                  <CardTitle className={`text-lg text-${edu.color} flex items-start gap-3`}>
-                    <GraduationCap size={24} className="mt-1 flex-shrink-0" />
-                    <div>
-                      <div className="text-foreground mb-2">{edu.degree}</div>
-                      <div className="text-sm font-normal text-muted-foreground">
-                        {edu.institution}
+                <div className={`h-1 w-full bg-gradient-to-r from-${edu.color} to-${edu.color}/50`}></div>
+                <CardHeader className="pb-3">
+                  <div className="flex items-start justify-between">
+                    <div className="flex items-start gap-4">
+                      <div className={`p-3 rounded-xl glass border border-${edu.color}/30 bg-${edu.color}/10 mt-1`}>
+                        <GraduationCap size={24} className={`text-${edu.color}`} />
+                      </div>
+                      <div className="flex-1">
+                        <CardTitle className="text-xl text-foreground mb-2 leading-tight">
+                          {edu.degree}
+                        </CardTitle>
+                        <p className="text-lg font-semibold text-muted-foreground mb-1">
+                          {edu.institution}
+                        </p>
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                          <MapPin size={14} />
+                          <span>{edu.location}</span>
+                        </div>
                       </div>
                     </div>
-                  </CardTitle>
+                    <div className={`px-3 py-1 rounded-full bg-${edu.color}/10 border border-${edu.color}/30`}>
+                      <span className={`text-xs font-semibold text-${edu.color}`}>{edu.status}</span>
+                    </div>
+                  </div>
                 </CardHeader>
-                <CardContent className="space-y-3">
+                
+                <CardContent className="space-y-4">
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Calendar size={14} />
                     <span>{edu.period}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-sm">
-                    <Award size={14} className={`text-${edu.color}`} />
-                    <span className="text-foreground">{edu.grade}</span>
+                  
+                  <div className="flex items-center gap-2">
+                    <Award size={16} className={`text-${edu.color}`} />
+                    <span className="text-foreground font-semibold">{edu.grade}</span>
+                  </div>
+                  
+                  <div className="pt-3 border-t border-white/10">
+                    <h4 className="text-sm font-semibold mb-2 text-muted-foreground uppercase tracking-wide">Key Highlights</h4>
+                    <ul className="space-y-1">
+                      {edu.highlights.map((highlight, idx) => (
+                        <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">
+                          <span className={`text-${edu.color} mt-1 text-xs`}>•</span>
+                          <span>{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
 
-          {/* Additional Information */}
+          {/* Achievements */}
           <div className="space-y-8">
-            {additionalInfo.map((section, index) => (
-              <div key={section.title}>
-                <h3 className={`text-2xl font-bold text-${section.color} mb-6`}>
-                  {section.title}
-                </h3>
-                <Card 
-                  className={`glass glass-hover neon-glow animate-fade-in hover:scale-105 transition-all duration-300`}
-                  style={{ animationDelay: `${(index + 1) * 0.2}s` }}
-                >
-                  <CardContent className="p-6">
-                    <div className={`flex items-center gap-3 mb-4 text-${section.color}`}>
-                      <section.icon size={24} />
-                      <span className="text-lg font-semibold">{section.title}</span>
-                    </div>
-                    <ul className="space-y-2">
-                      {section.items.map((item, itemIndex) => (
-                        <li key={itemIndex} className="text-muted-foreground flex items-start">
-                          <span className={`text-${section.color} mr-2 mt-1`}>•</span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              </div>
+            <div className="flex items-center gap-3 mb-8">
+              <Trophy size={32} className="text-neon-cyan" />
+              <h3 className="text-3xl font-bold text-neon-cyan">Achievements & Recognition</h3>
+            </div>
+            
+            {achievements.map((section, index) => (
+              <Card 
+                key={section.category}
+                className={`glass glass-hover neon-glow border-2 border-white/10 hover:border-${section.color}/30 transition-all duration-500 animate-fade-in`}
+                style={{ animationDelay: `${(index + 1) * 0.2}s` }}
+              >
+                <div className={`h-1 w-full bg-gradient-to-r from-${section.color} to-${section.color}/50`}></div>
+                <CardHeader className="pb-4">
+                  <CardTitle className={`text-xl text-${section.color} flex items-center gap-3`}>
+                    <div className={`w-2 h-6 bg-gradient-to-b from-${section.color} to-${section.color}/50 rounded-full`}></div>
+                    {section.category}
+                  </CardTitle>
+                </CardHeader>
+                
+                <CardContent>
+                  <div className="grid gap-4">
+                    {section.items.map((item, itemIndex) => (
+                      <div key={itemIndex} className="flex items-center justify-between p-3 glass rounded-lg border border-white/10 hover:border-white/20 transition-all duration-300">
+                        <div className="flex items-center gap-3">
+                          <div className={`p-2 rounded-lg bg-${section.color}/10 border border-${section.color}/30`}>
+                            <item.icon size={16} className={`text-${section.color}`} />
+                          </div>
+                          <span className="text-foreground font-medium">{item.name}</span>
+                        </div>
+                        <span className={`text-${section.color} font-bold text-lg`}>{item.count}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>

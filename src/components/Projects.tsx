@@ -70,29 +70,27 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-32 relative overflow-hidden">
+    <section id="projects" className="py-24 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-1/4 left-0 w-72 h-72 bg-neon-purple/10 rounded-full blur-3xl animate-float"></div>
       <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-neon-blue/10 rounded-full blur-3xl animate-float" style={{animationDelay: '4s'}}></div>
       
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-20">
+      <div className="container mx-auto px-6 max-w-6xl">
+        <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-bold mb-6">
             Featured <span className="text-gradient">Projects</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-neon-purple to-neon-blue mx-auto mb-6"></div>
-          <p className="text-muted-foreground text-xl max-w-3xl mx-auto font-light">
+          <p className="text-muted-foreground text-xl max-w-2xl mx-auto font-light">
             Showcasing my latest work and innovative solutions
           </p>
         </div>
 
-        <div className="space-y-16">
+        <div className="space-y-12">
           {projects.map((project, index) => (
             <Card 
               key={project.title}
-              className={`glass glass-hover neon-glow border-2 border-white/10 hover:border-${project.color}/30 transition-all duration-500 overflow-hidden group ${
-                project.featured ? 'lg:h-auto' : 'lg:h-auto'
-              }`}
+              className={`glass glass-hover neon-glow border-2 border-white/10 hover:border-${project.color}/30 transition-all duration-500 overflow-hidden group animate-fade-in`}
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               <div className={`grid ${project.featured ? 'lg:grid-cols-2' : 'lg:grid-cols-5'} gap-0`}>
@@ -120,30 +118,30 @@ const Projects = () => {
                 </div>
 
                 {/* Project Content */}
-                <div className={`${project.featured ? 'lg:col-span-1' : 'lg:col-span-3'} p-8 lg:p-12 flex flex-col justify-center`}>
-                  <CardHeader className="p-0 mb-6">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className={`w-1 h-8 bg-gradient-to-b ${project.gradient} rounded-full`}></div>
-                      <CardTitle className={`text-3xl lg:text-4xl text-${project.color}`}>
+                <div className={`${project.featured ? 'lg:col-span-1' : 'lg:col-span-3'} p-6 lg:p-8 flex flex-col justify-center`}>
+                  <CardHeader className="p-0 mb-4">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className={`w-1 h-6 bg-gradient-to-b ${project.gradient} rounded-full`}></div>
+                      <CardTitle className={`text-2xl lg:text-3xl text-${project.color}`}>
                         {project.title}
                       </CardTitle>
                     </div>
-                    <p className="text-xl text-muted-foreground font-medium mb-4">
+                    <p className="text-lg text-muted-foreground font-medium mb-3">
                       {project.subtitle}
                     </p>
-                    <p className="text-lg text-muted-foreground leading-relaxed">
+                    <p className="text-base text-muted-foreground leading-relaxed">
                       {project.description}
                     </p>
                   </CardHeader>
 
-                  <CardContent className="p-0 space-y-8">
+                  <CardContent className="p-0 space-y-6">
                     {/* Key Features */}
                     <div>
-                      <h4 className="text-lg font-semibold mb-4 text-foreground">Key Features:</h4>
-                      <ul className="space-y-2">
-                        {project.longDescription.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="text-muted-foreground flex items-start gap-3">
-                            <span className={`text-${project.color} mt-1 text-sm`}>▸</span>
+                      <h4 className="text-base font-semibold mb-3 text-foreground">Key Features:</h4>
+                      <ul className="space-y-1">
+                        {project.longDescription.slice(0, 3).map((feature, featureIndex) => (
+                          <li key={featureIndex} className="text-sm text-muted-foreground flex items-start gap-2">
+                            <span className={`text-${project.color} mt-1 text-xs`}>▸</span>
                             <span className="flex-1">{feature}</span>
                           </li>
                         ))}
@@ -151,26 +149,26 @@ const Projects = () => {
                     </div>
 
                     {/* Project Details */}
-                    <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
+                    <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
                       <div className="flex items-center gap-2">
-                        <Calendar size={16} className={`text-${project.color}`} />
+                        <Calendar size={14} className={`text-${project.color}`} />
                         <span>{project.duration}</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Users size={16} className={`text-${project.color}`} />
+                        <Users size={14} className={`text-${project.color}`} />
                         <span>{project.team}</span>
                       </div>
                     </div>
 
                     {/* Technologies */}
                     <div>
-                      <h4 className="text-sm font-semibold mb-3 text-muted-foreground uppercase tracking-wide">Technologies Used:</h4>
+                      <h4 className="text-xs font-semibold mb-2 text-muted-foreground uppercase tracking-wide">Tech Stack:</h4>
                       <div className="flex flex-wrap gap-2">
-                        {project.tech.map((tech) => (
+                        {project.tech.slice(0, 5).map((tech) => (
                           <Badge
                             key={tech}
                             variant="secondary"
-                            className={`bg-${project.color}/10 text-${project.color} border border-${project.color}/20 hover:bg-${project.color}/20 transition-colors`}
+                            className={`bg-${project.color}/10 text-${project.color} border border-${project.color}/20 hover:bg-${project.color}/20 transition-colors text-xs`}
                           >
                             {tech}
                           </Badge>
@@ -179,26 +177,28 @@ const Projects = () => {
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="flex flex-wrap gap-4 pt-4">
+                    <div className="flex flex-wrap gap-3 pt-2">
                       <Button
                         asChild
+                        size="sm"
                         className={`bg-gradient-to-r ${project.gradient} hover:shadow-lg hover:shadow-${project.color}/25 transition-all duration-300 group`}
                       >
                         <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                          <ExternalLink size={18} />
+                          <ExternalLink size={16} />
                           Live Demo
-                          <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                          <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                         </a>
                       </Button>
                       
                       <Button
                         variant="outline"
+                        size="sm"
                         asChild
                         className={`border-${project.color}/30 text-${project.color} hover:bg-${project.color}/10 hover:border-${project.color} transition-all duration-300`}
                       >
                         <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                          <Github size={18} />
-                          Source Code
+                          <Github size={16} />
+                          Code
                         </a>
                       </Button>
                     </div>
@@ -210,7 +210,7 @@ const Projects = () => {
         </div>
 
         {/* View More Projects Button */}
-        <div className="text-center mt-16">
+        <div className="text-center mt-12">
           <Button
             variant="outline"
             size="lg"
