@@ -31,19 +31,19 @@ const Header = () => {
         isScrolled ? 'glass neon-glow' : 'bg-transparent'
       }`}
     >
-      <nav className="container mx-auto px-6 py-4">
+      <nav className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold text-gradient">
+          <div className="text-xl sm:text-2xl font-bold text-gradient">
             Piyush Barkhade
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-4 lg:space-x-8">
             {navItems.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
-                className="text-foreground hover:text-neon-purple transition-colors duration-300 relative group"
+                className="text-sm lg:text-base text-foreground hover:text-neon-purple transition-colors duration-300 relative group"
               >
                 {item.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-neon-purple to-neon-blue transition-all duration-300 group-hover:w-full"></span>
@@ -54,7 +54,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-foreground hover:text-neon-purple transition-colors"
+            className="md:hidden text-foreground hover:text-neon-purple transition-colors p-2"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -67,7 +67,7 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="block py-2 text-foreground hover:text-neon-purple transition-colors duration-300"
+                className="block py-3 text-foreground hover:text-neon-purple transition-colors duration-300 border-b border-white/10 last:border-b-0"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
