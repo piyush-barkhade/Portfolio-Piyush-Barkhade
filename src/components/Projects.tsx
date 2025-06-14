@@ -21,7 +21,7 @@ const Projects = () => {
       tech: ['React.js', 'Node.js', 'MongoDB', 'Express.js', 'Twilio API', 'Google Maps API', 'JWT Auth'],
       color: 'neon-purple',
       gradient: 'from-neon-purple to-neon-blue',
-      image: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=600&h=400&fit=crop',
+      image: '/logo-alertify.png',
       status: 'Live',
       team: 'Solo Project',
       duration: '1 month',
@@ -41,7 +41,7 @@ const Projects = () => {
       tech: ['React.js', 'Express.js', 'MongoDB', 'Node.js', 'Chart.js', 'Socket.io', 'Redux'],
       color: 'neon-blue',
       gradient: 'from-neon-blue to-neon-cyan',
-      image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&h=400&fit=crop',
+      image: 'logo-placement-right.jpg',
       status: 'Live',
       team: 'Solo Project',
       duration: '2 months',
@@ -61,11 +61,11 @@ const Projects = () => {
       tech: ['React.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vite'],
       color: 'neon-cyan',
       gradient: 'from-neon-cyan to-neon-pink',
-      image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop',
+      image: 'Profile.jpg',
       status: 'Live',
       team: 'Solo project',
       duration: '1 month',
-      link: '/',
+      link: 'https://piyush-barkhade.onrender.com/',
       featured: false
     }
     // Add more projects here

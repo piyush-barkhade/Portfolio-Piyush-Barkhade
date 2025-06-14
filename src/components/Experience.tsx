@@ -6,14 +6,24 @@ import { Calendar, MapPin } from 'lucide-react';
 const Experience = () => {
   const experiences = [
     {
-      title: 'Full Stack Developer',
+      title: 'Software Developer',
       company: 'IQ Paths Technologies',
-      location: 'Remote',
+      location: 'Indore',
       period: 'April 2025 - Present',
       description: [
         'Developing a dynamic resume builder application that allows users to create, customize, and export professional resumes with real-time previews and template management using React and Node.js'
       ],
       color: 'neon-purple'
+    },
+    {
+      title: 'Productions Head',
+      company: 'Entrepreneurship Cell, Medi-Caps University',
+      location: 'Indore',
+      period: 'Jan 2025 - Present',
+      description: [
+        'Led the production and execution of flagship entrepreneurial events at E-Cell Medi-Caps, managing logistics, design, and team coordination to deliver impactful experiences for 2000+ attendees.'
+      ],
+      color: 'neon-blue'
     },
     {
       title: 'Video Editing Head',

@@ -47,7 +47,7 @@ const Hero = () => {
           <div className="relative inline-block mt-16 sm:mt-20 mb-8 sm:mb-12">
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-neon-purple via-neon-blue to-neon-cyan blur-lg opacity-70 animate-pulse-glow"></div>
             <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face"
+              src="/Profile.jpg"
               alt="Piyush Barkhade"
               className="relative w-32 h-32 sm:w-48 sm:h-48 lg:w-56 lg:h-56 rounded-full mx-auto border-4 border-white/20 backdrop-blur-sm shadow-2xl animate-float"
             />
