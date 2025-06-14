@@ -59,28 +59,28 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="py-20 relative overflow-hidden">
+    <section id="education" className="py-12 sm:py-16 lg:py-20 relative overflow-hidden px-4 sm:px-6 lg:px-8">
       {/* Background Elements */}
       <div className="absolute top-1/4 left-10 w-64 h-64 bg-neon-purple/5 rounded-full blur-3xl animate-float"></div>
       <div className="absolute bottom-1/4 right-10 w-80 h-80 bg-neon-blue/5 rounded-full blur-3xl animate-float" style={{animationDelay: '3s'}}></div>
       
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">
+      <div className="container mx-auto max-w-7xl">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
             Education & <span className="text-gradient">Achievements</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-neon-purple to-neon-blue mx-auto mb-6"></div>
-          <p className="text-muted-foreground text-xl max-w-3xl mx-auto font-light">
+          <div className="w-16 sm:w-20 lg:w-24 h-1 bg-gradient-to-r from-neon-purple to-neon-blue mx-auto mb-4 sm:mb-6"></div>
+          <p className="text-muted-foreground text-lg sm:text-xl max-w-3xl mx-auto font-light px-4 sm:px-0">
             My academic journey and professional accomplishments that shaped my expertise
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
           {/* Education Timeline */}
-          <div className="space-y-8">
-            <div className="flex items-center gap-3 mb-8">
-              <BookOpen size={32} className="text-neon-purple" />
-              <h3 className="text-3xl font-bold text-neon-purple">Academic Background</h3>
+          <div className="space-y-6 sm:space-y-8">
+            <div className="flex items-center gap-3 mb-6 sm:mb-8">
+              <BookOpen size={28} className="sm:size-8 text-neon-purple" />
+              <h3 className="text-2xl sm:text-3xl font-bold text-neon-purple">Academic Background</h3>
             </div>
             
             {education.map((edu, index) => (
@@ -90,17 +90,17 @@ const Education = () => {
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
                 <div className={`h-1 w-full bg-gradient-to-r from-${edu.color} to-${edu.color}/50`}></div>
-                <CardHeader className="pb-3">
-                  <div className="flex items-start justify-between">
-                    <div className="flex items-start gap-4">
-                      <div className={`p-3 rounded-xl glass border border-${edu.color}/30 bg-${edu.color}/10 mt-1`}>
-                        <GraduationCap size={24} className={`text-${edu.color}`} />
+                <CardHeader className="pb-3 p-4 sm:p-6">
+                  <div className="flex items-start justify-between flex-col sm:flex-row gap-4">
+                    <div className="flex items-start gap-3 sm:gap-4 flex-1">
+                      <div className={`p-2 sm:p-3 rounded-xl glass border border-${edu.color}/30 bg-${edu.color}/10 mt-1`}>
+                        <GraduationCap size={20} className={`sm:size-6 text-${edu.color}`} />
                       </div>
                       <div className="flex-1">
-                        <CardTitle className="text-xl text-foreground mb-2 leading-tight">
+                        <CardTitle className="text-lg sm:text-xl text-foreground mb-2 leading-tight">
                           {edu.degree}
                         </CardTitle>
-                        <p className="text-lg font-semibold text-muted-foreground mb-1">
+                        <p className="text-base sm:text-lg font-semibold text-muted-foreground mb-1">
                           {edu.institution}
                         </p>
                         <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
@@ -109,13 +109,13 @@ const Education = () => {
                         </div>
                       </div>
                     </div>
-                    <div className={`px-3 py-1 rounded-full bg-${edu.color}/10 border border-${edu.color}/30`}>
+                    <div className={`px-3 py-1 rounded-full bg-${edu.color}/10 border border-${edu.color}/30 w-fit`}>
                       <span className={`text-xs font-semibold text-${edu.color}`}>{edu.status}</span>
                     </div>
                   </div>
                 </CardHeader>
                 
-                <CardContent className="space-y-4">
+                <CardContent className="space-y-4 p-4 sm:p-6 pt-0">
                   <div className="flex items-center gap-2 text-sm text-muted-foreground">
                     <Calendar size={14} />
                     <span>{edu.period}</span>
@@ -123,7 +123,7 @@ const Education = () => {
                   
                   <div className="flex items-center gap-2">
                     <Award size={16} className={`text-${edu.color}`} />
-                    <span className="text-foreground font-semibold">{edu.grade}</span>
+                    <span className="text-foreground font-semibold text-sm sm:text-base">{edu.grade}</span>
                   </div>
                   
                   <div className="pt-3 border-t border-white/10">
@@ -143,10 +143,10 @@ const Education = () => {
           </div>
 
           {/* Achievements */}
-          <div className="space-y-8">
-            <div className="flex items-center gap-3 mb-8">
-              <Trophy size={32} className="text-neon-cyan" />
-              <h3 className="text-3xl font-bold text-neon-cyan">Achievements & Recognition</h3>
+          <div className="space-y-6 sm:space-y-8">
+            <div className="flex items-center gap-3 mb-6 sm:mb-8">
+              <Trophy size={28} className="sm:size-8 text-neon-cyan" />
+              <h3 className="text-2xl sm:text-3xl font-bold text-neon-cyan">Achievements & Recognition</h3>
             </div>
             
             {achievements.map((section, index) => (
@@ -156,24 +156,24 @@ const Education = () => {
                 style={{ animationDelay: `${(index + 1) * 0.2}s` }}
               >
                 <div className={`h-1 w-full bg-gradient-to-r from-${section.color} to-${section.color}/50`}></div>
-                <CardHeader className="pb-4">
-                  <CardTitle className={`text-xl text-${section.color} flex items-center gap-3`}>
-                    <div className={`w-2 h-6 bg-gradient-to-b from-${section.color} to-${section.color}/50 rounded-full`}></div>
+                <CardHeader className="pb-4 p-4 sm:p-6">
+                  <CardTitle className={`text-lg sm:text-xl text-${section.color} flex items-center gap-3`}>
+                    <div className={`w-2 h-5 sm:h-6 bg-gradient-to-b from-${section.color} to-${section.color}/50 rounded-full`}></div>
                     {section.category}
                   </CardTitle>
                 </CardHeader>
                 
-                <CardContent>
-                  <div className="grid gap-4">
+                <CardContent className="p-4 sm:p-6 pt-0">
+                  <div className="grid gap-3 sm:gap-4">
                     {section.items.map((item, itemIndex) => (
                       <div key={itemIndex} className="flex items-center justify-between p-3 glass rounded-lg border border-white/10 hover:border-white/20 transition-all duration-300">
                         <div className="flex items-center gap-3">
                           <div className={`p-2 rounded-lg bg-${section.color}/10 border border-${section.color}/30`}>
                             <item.icon size={16} className={`text-${section.color}`} />
                           </div>
-                          <span className="text-foreground font-medium">{item.name}</span>
+                          <span className="text-foreground font-medium text-sm sm:text-base">{item.name}</span>
                         </div>
-                        <span className={`text-${section.color} font-bold text-lg`}>{item.count}</span>
+                        <span className={`text-${section.color} font-bold text-base sm:text-lg`}>{item.count}</span>
                       </div>
                     ))}
                   </div>

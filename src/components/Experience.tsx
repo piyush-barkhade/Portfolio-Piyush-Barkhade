@@ -28,13 +28,13 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 relative">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">
+    <section id="experience" className="py-12 sm:py-16 lg:py-20 relative px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto max-w-7xl">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 text-gradient">
             Work Experience
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto px-4 sm:px-0">
             My professional journey and contributions
           </p>
         </div>
@@ -43,7 +43,7 @@ const Experience = () => {
           {/* Timeline line */}
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-neon-purple via-neon-blue to-neon-cyan transform md:-translate-x-1/2"></div>
 
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             {experiences.map((exp, index) => (
               <div
                 key={exp.title}
@@ -54,14 +54,14 @@ const Experience = () => {
                 {/* Timeline dot */}
                 <div className={`absolute left-4 md:left-1/2 w-4 h-4 bg-${exp.color} rounded-full transform md:-translate-x-1/2 z-10 animate-pulse-glow`}></div>
 
-                <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'} ml-12 md:ml-0`}>
+                <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pr-8 lg:pr-12' : 'md:pl-8 lg:pl-12'} ml-12 md:ml-0`}>
                   <Card className={`glass glass-hover neon-glow animate-fade-in group hover:scale-105 transition-all duration-300`}>
-                    <CardHeader>
-                      <CardTitle className={`text-xl text-${exp.color}`}>
+                    <CardHeader className="p-4 sm:p-6">
+                      <CardTitle className={`text-lg sm:text-xl text-${exp.color}`}>
                         {exp.title}
                       </CardTitle>
                       <div className="space-y-2">
-                        <h4 className="text-lg font-semibold text-foreground">
+                        <h4 className="text-base sm:text-lg font-semibold text-foreground">
                           {exp.company}
                         </h4>
                         <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-sm text-muted-foreground">
@@ -76,10 +76,10 @@ const Experience = () => {
                         </div>
                       </div>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="p-4 sm:p-6 pt-0">
                       <ul className="space-y-2">
                         {exp.description.map((item, itemIndex) => (
-                          <li key={itemIndex} className="text-muted-foreground flex items-start">
+                          <li key={itemIndex} className="text-sm sm:text-base text-muted-foreground flex items-start">
                             <span className={`text-${exp.color} mr-2 mt-1`}>•</span>
                             {item}
                           </li>
