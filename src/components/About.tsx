@@ -77,20 +77,7 @@ const About = () => {
               </CardContent>
             </Card>
 
-            {/* Stats */}
-           <div className="grid grid-cols-3 gap-4 mx-auto max-w-6xl">
-  {stats.map((stat, index) => (
-    <Card 
-      key={stat.label} 
-      className="glass glass-hover text-center p-6 hover:scale-105 transition-all duration-300 border border-white/10"
-      style={{ animationDelay: `${index * 0.1}s` }}
-    >
-      <stat.icon size={32} className="text-neon-purple mx-auto mb-3" />
-      <div className="text-3xl font-bold text-gradient mb-2">{stat.value}</div>
-      <div className="text-sm text-muted-foreground">{stat.label}</div>
-    </Card>
-  ))}
-</div>
+            
 
           </div>
 
@@ -151,6 +138,20 @@ const About = () => {
             </Card>
           </div>
         </div>
+        {/* Stats */}
+           <div className="grid grid-cols-3 gap-4 mt-24 mx-auto max-w-6xl">
+  {stats.map((stat, index) => (
+    <Card 
+      key={stat.label} 
+      className="glass glass-hover text-center p-6 hover:scale-105 transition-all duration-300 border border-white/10"
+      style={{ animationDelay: `${index * 0.1}s` }}
+    >
+      <stat.icon size={32} className="text-neon-purple mx-auto mb-3" />
+      <div className="text-3xl font-bold text-gradient mb-2">{stat.value}</div>
+      <div className="text-sm text-muted-foreground">{stat.label}</div>
+    </Card>
+  ))}
+</div>
       </div>
     </section>
   );
