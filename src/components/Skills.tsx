@@ -15,8 +15,8 @@ const Skills = () => {
       skills: [
         { name: 'JavaScript', level: 90, description: 'ES6+, Modern JS' },
         { name: 'TypeScript', level: 85, description: 'Type-safe development' },
-        { name: 'Python', level: 80, description: 'Backend & Scripting' },
-        { name: 'Java', level: 75, description: 'OOP & Enterprise' },
+        { name: 'Java', level: 80, description: 'Backend & Scripting' },
+        { name: 'Python', level: 75, description: 'OOP & Enterprise' },
         { name: 'C/C++', level: 85, description: 'System Programming' },
       ],
       color: 'neon-purple',
@@ -67,7 +67,6 @@ const Skills = () => {
     '15+ Google Cloud Skill Badges',
     'Web Development Certification',
     'AI/ML Internship Certificate',
-    'React.js Advanced Concepts'
   ];
 
   useEffect(() => {

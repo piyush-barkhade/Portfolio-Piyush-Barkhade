@@ -6,7 +6,7 @@ import { MapPin, Phone, Mail, Calendar, Award, Users } from 'lucide-react';
 
 const About = () => {
   const stats = [
-    { label: 'Years Experience', value: '2+', icon: Calendar },
+    { label: 'Years Experience', value: '1+', icon: Calendar },
     { label: 'Projects Completed', value: '15+', icon: Award },
     { label: 'Happy Clients', value: '10+', icon: Users },
   ];
@@ -14,7 +14,7 @@ const About = () => {
   const highlights = [
     'Full-Stack MERN Developer',
     'Google Cloud Certified',
-    'UI/UX Design Enthusiast',
+    'AI/ML Enthusiast',
     'Problem Solving Expert'
   ];
 

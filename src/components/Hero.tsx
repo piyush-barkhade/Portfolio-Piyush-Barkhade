@@ -80,7 +80,7 @@ const Hero = () => {
               size="lg"
               className="bg-gradient-to-r from-neon-purple to-neon-blue hover:from-neon-blue hover:to-neon-cyan transition-all duration-500 animate-glow shadow-2xl text-lg px-8 py-4 group"
             >
-              <a href="#contact" className="flex items-center gap-2">
+              <a href="https://www.linkedin.com/in/piyush-barkhade-453a8b2b4/" className="flex items-center gap-2" target="_blank">
                 <Mail size={20} />
                 Let's Connect
                 <ExternalLink size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -99,22 +99,31 @@ const Hero = () => {
               </a>
             </Button>
             
-            <Button 
-              variant="secondary"
-              size="lg"
-              className="bg-white/10 text-foreground hover:bg-white/20 backdrop-blur-sm border border-white/20 text-lg px-8 py-4 group"
-            >
-              <Download size={20} className="mr-2 group-hover:animate-bounce" />
-              Download CV
-            </Button>
+            <a 
+  href="/My_CV.pdf" 
+  download="My_CV.pdf"
+  target="_blank" 
+  rel="noopener noreferrer"
+>
+  <Button 
+    variant="secondary"
+    size="lg"
+    className="bg-white/10 text-foreground hover:bg-white/20 backdrop-blur-sm border border-white/20 text-lg px-8 py-4 group"
+  >
+    <Download size={20} className="mr-2 group-hover:animate-bounce" />
+    Download CV
+  </Button>
+</a>
+
           </div>
           
           {/* Enhanced Social Links */}
           <div className="flex justify-center space-x-8 mb-12">
             {[
-              { icon: Github, href: 'https://github.com', label: 'GitHub', color: 'neon-purple' },
-              { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn', color: 'neon-blue' },
-              { icon: Mail, href: 'mailto:piyushbarkhade.pb@gmail.com', label: 'Email', color: 'neon-cyan' }
+              { icon: Github, href: 'https://github.com/piyush-barkhade', label: 'GitHub', color: 'neon-purple' },
+              { icon: Linkedin, href: 'https://www.linkedin.com/in/piyush-barkhade-453a8b2b4/', label: 'LinkedIn', color: 'neon-blue' },
+              { icon: Mail, href: 'https://mail.google.com/mail/?view=cm&to=piyushbarkhade.pb@gmail.com&su=Subject&body=Message'
+, label: 'Email', color: 'neon-cyan' }
             ].map((social) => (
               <a
                 key={social.label}

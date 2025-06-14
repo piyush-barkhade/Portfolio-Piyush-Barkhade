@@ -10,12 +10,12 @@ const Education = () => {
       institution: 'Medi-Caps University',
       location: 'Indore, Madhya Pradesh',
       period: '2022 - 2026',
-      grade: 'Current CGPA: 9.15/10.0',
+      grade: 'Current CGPA: 9.18/10.0',
       status: 'Pursuing',
       color: 'neon-purple',
       highlights: [
         'Top 5% of the class',
-        'Consistent Dean\'s List member',
+        "Consistent strong learner list's student",
         'Active in technical societies'
       ]
     },
@@ -30,7 +30,7 @@ const Education = () => {
       highlights: [
         'Science stream with Mathematics',
         'School topper in Computer Science',
-        'Active participant in coding competitions'
+        'Active participant in various competitions'
       ]
     }
   ];
@@ -40,16 +40,18 @@ const Education = () => {
       category: 'Certifications & Badges',
       items: [
         { name: 'Google Cloud Skill Badges', count: '15+', icon: Star },
+        { name: 'AWS Certified', count: '1', icon: Award },
+        { name: 'Web Development Internship Certificate', count: '2', icon: Award },
         { name: 'Artificial Intelligence Internship Certificate', count: '1', icon: Award },
-        { name: 'Web Development Internship Certificate', count: '1', icon: Award }
       ],
       color: 'neon-cyan'
     },
     {
       category: 'Competitions & Recognition',
       items: [
-        { name: 'Tech Rookies 2025 Winner', count: '🏆', icon: Trophy },
+        { name: 'Tech Roadies 2025 Winner', count: '🏆', icon: Trophy },
         { name: 'Google GenAI Study Jams Tier 1', count: '🎁', icon: Star },
+        { name: 'AWS Certified', count: '1', icon: Award },
         { name: 'Hackathon Participant', count: '3+', icon: Award }
       ],
       color: 'neon-pink'

@@ -1,11 +1,12 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ExternalLink, Github, Calendar, Users, Star, ArrowRight } from 'lucide-react';
 
 const Projects = () => {
+  const [visibleCount, setVisibleCount] = useState(3);
+
   const projects = [
     {
       title: 'Alert Right',
@@ -22,9 +23,9 @@ const Projects = () => {
       gradient: 'from-neon-purple to-neon-blue',
       image: 'https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=600&h=400&fit=crop',
       status: 'Live',
-      team: '4 developers',
-      duration: '3 months',
-      link: '#',
+      team: 'Solo Project',
+      duration: '1 month',
+      link: 'https://alert-right.onrender.com/',
       featured: true
     },
     {
@@ -42,9 +43,9 @@ const Projects = () => {
       gradient: 'from-neon-blue to-neon-cyan',
       image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&h=400&fit=crop',
       status: 'Live',
-      team: '3 developers',
+      team: 'Solo Project',
       duration: '2 months',
-      link: '#',
+      link: 'https://placement-right.onrender.com/',
       featured: true
     },
     {
@@ -64,17 +65,18 @@ const Projects = () => {
       status: 'Live',
       team: 'Solo project',
       duration: '1 month',
-      link: '#',
+      link: '/',
       featured: false
     }
+    // Add more projects here
   ];
 
   return (
     <section id="projects" className="py-24 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-1/4 left-0 w-72 h-72 bg-neon-purple/10 rounded-full blur-3xl animate-float"></div>
-      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-neon-blue/10 rounded-full blur-3xl animate-float" style={{animationDelay: '4s'}}></div>
-      
+      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-neon-blue/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
+
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-bold mb-6">
@@ -87,14 +89,14 @@ const Projects = () => {
         </div>
 
         <div className="space-y-12">
-          {projects.map((project, index) => (
-            <Card 
+          {projects.slice(0, visibleCount).map((project, index) => (
+            <Card
               key={project.title}
               className={`glass glass-hover neon-glow border-2 border-white/10 hover:border-${project.color}/30 transition-all duration-500 overflow-hidden group animate-fade-in`}
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               <div className={`grid ${project.featured ? 'lg:grid-cols-2' : 'lg:grid-cols-5'} gap-0`}>
-                {/* Project Image */}
+                {/* Image */}
                 <div className={`relative overflow-hidden ${project.featured ? 'lg:col-span-1' : 'lg:col-span-2'} ${index % 2 === 1 && project.featured ? 'lg:order-2' : ''}`}>
                   <div className="aspect-video lg:aspect-square lg:h-full relative">
                     <img
@@ -117,7 +119,7 @@ const Projects = () => {
                   </div>
                 </div>
 
-                {/* Project Content */}
+                {/* Content */}
                 <div className={`${project.featured ? 'lg:col-span-1' : 'lg:col-span-3'} p-6 lg:p-8 flex flex-col justify-center`}>
                   <CardHeader className="p-0 mb-4">
                     <div className="flex items-center gap-3 mb-2">
@@ -135,20 +137,20 @@ const Projects = () => {
                   </CardHeader>
 
                   <CardContent className="p-0 space-y-6">
-                    {/* Key Features */}
+                    {/* Features */}
                     <div>
                       <h4 className="text-base font-semibold mb-3 text-foreground">Key Features:</h4>
                       <ul className="space-y-1">
-                        {project.longDescription.slice(0, 3).map((feature, featureIndex) => (
-                          <li key={featureIndex} className="text-sm text-muted-foreground flex items-start gap-2">
+                        {project.longDescription.slice(0, 3).map((feature, i) => (
+                          <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
                             <span className={`text-${project.color} mt-1 text-xs`}>▸</span>
-                            <span className="flex-1">{feature}</span>
+                            <span>{feature}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
 
-                    {/* Project Details */}
+                    {/* Details */}
                     <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
                       <div className="flex items-center gap-2">
                         <Calendar size={14} className={`text-${project.color}`} />
@@ -160,7 +162,7 @@ const Projects = () => {
                       </div>
                     </div>
 
-                    {/* Technologies */}
+                    {/* Tech Stack */}
                     <div>
                       <h4 className="text-xs font-semibold mb-2 text-muted-foreground uppercase tracking-wide">Tech Stack:</h4>
                       <div className="flex flex-wrap gap-2">
@@ -176,7 +178,7 @@ const Projects = () => {
                       </div>
                     </div>
 
-                    {/* Action Buttons */}
+                    {/* Button */}
                     <div className="flex flex-wrap gap-3 pt-2">
                       <Button
                         asChild
@@ -189,18 +191,6 @@ const Projects = () => {
                           <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                         </a>
                       </Button>
-                      
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        asChild
-                        className={`border-${project.color}/30 text-${project.color} hover:bg-${project.color}/10 hover:border-${project.color} transition-all duration-300`}
-                      >
-                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                          <Github size={16} />
-                          Code
-                        </a>
-                      </Button>
                     </div>
                   </CardContent>
                 </div>
@@ -209,17 +199,31 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* View More Projects Button */}
-        <div className="text-center mt-12">
-          <Button
-            variant="outline"
-            size="lg"
-            className="border-2 border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-background glass backdrop-blur-sm text-lg px-8 py-4 group"
-          >
-            View All Projects
-            <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
-          </Button>
-        </div>
+        {/* Toggle View More/Less */}
+        {projects.length > 3 && (
+          <div className="text-center mt-12">
+            {visibleCount < projects.length ? (
+              <Button
+                onClick={() => setVisibleCount(projects.length)}
+                variant="outline"
+                size="lg"
+                className="border-2 border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-background glass backdrop-blur-sm text-lg px-8 py-4 group"
+              >
+                View More Projects
+                <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            ) : (
+              <Button
+                onClick={() => setVisibleCount(3)}
+                variant="outline"
+                size="lg"
+                className="border-2 border-neon-purple text-neon-purple hover:bg-neon-purple hover:text-background glass backdrop-blur-sm text-lg px-8 py-4 group"
+              >
+                Show Less
+              </Button>
+            )}
+          </div>
+        )}
       </div>
     </section>
   );
