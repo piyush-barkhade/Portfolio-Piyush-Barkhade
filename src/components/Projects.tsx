@@ -18,7 +18,7 @@ const Projects = () => {
         'Implemented Google Maps API for precise real-time location tracking and sharing',
         'Built responsive UI with React for seamless cross-platform experience'
       ],
-      tech: ['React.js', 'Node.js', 'MongoDB', 'Express.js', 'Twilio API', 'Google Maps API', 'JWT Auth'],
+      tech: ['React.js', 'Node.js', 'MongoDB', 'Twilio API', 'Google Maps API', 'JWT Auth'],
       color: 'neon-purple',
       gradient: 'from-neon-purple to-neon-blue',
       image: '/logo-alertify.png',
@@ -38,7 +38,7 @@ const Projects = () => {
         'Designed intuitive progress tracking with detailed analytics and performance insights',
         'Created responsive design for optimal experience across all device types'
       ],
-      tech: ['React.js', 'Express.js', 'MongoDB', 'Node.js', 'Chart.js', 'Socket.io', 'Redux'],
+      tech: ['React.js', 'Express.js', 'MongoDB', 'Node.js', 'Chart.js'],
       color: 'neon-blue',
       gradient: 'from-neon-blue to-neon-cyan',
       image: 'logo-placement-right.jpg',
@@ -48,6 +48,27 @@ const Projects = () => {
       link: 'https://placement-right.onrender.com/',
       featured: true
     },
+    {
+  title: 'Chat Right',
+  subtitle: 'Real-Time Chat Application',
+  description: 'A modern, real-time one-to-one chat platform enabling users to connect seamlessly with features like message seen status, typing indicators, and friend requests.',
+  longDescription: [
+    'Developed one-to-one real-time chat functionality using Socket.io with seen and delivery status',
+    'Built friend request and friend list management system with secure authentication',
+    'Implemented typing indicators, online/offline status, and timestamped chat history',
+    'Designed responsive UI with Tailwind CSS for seamless experience across devices'
+  ],
+  tech: ['React.js', 'Node.js', 'Socket.io', 'JWT Auth', 'Express.js', 'MongoDB',],
+  color: 'neon-cyan',
+  gradient: 'from-neon-cyan to-neon-purple',
+  image: 'chat-right.avif', // Replace with actual image path or URL
+  status: 'Live',
+  team: 'Solo Project',
+  duration: '1.5 months',
+  link: 'https://chat-right.onrender.com/', // Replace with actual link
+  featured: true
+}
+,
     {
       title: 'Portfolio Website',
       subtitle: 'Personal Brand Showcase',
@@ -66,7 +87,7 @@ const Projects = () => {
       team: 'Solo project',
       duration: '1 month',
       link: 'https://piyush-barkhade.onrender.com/',
-      featured: false
+      featured: true
     }
     // Add more projects here
   ];
